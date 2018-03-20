@@ -1,0 +1,55 @@
+start
+	Declarations
+	   string userName
+   	   string userAge
+   	   string userCit
+     	   string userState
+   	   string userFelon
+  	   string userRights
+  	   strint userComp
+	output "Please eneter your name."
+	input userName
+	output “Hello”, userName, “I am going to ask you a series of Y or N questions to see if you qualify to vote   		today. Let’s begin.” 
+	output “Are you eighteen (18) years of age or older?”
+	input userAge
+	if userAge = y is true then
+		output “Are you a U.S. citizen?”
+		input userCit
+		if userCit = y is true then
+			output “Are you a Virginia (VA) resident?”
+			input userState
+			if userState = y is true then
+				output “Are you a convicted felony?”
+				input userFelon
+				if userFelon = n is true then
+					output “Have you been deemed incompetent in a court of law?”
+					input userComp
+					if userComp = n is true then
+						output “Your are qualified to vote.”
+					else
+						output “Your are NOT qualified to vote.”
+					endif
+				else
+					output “Have your rights been restored?”
+					input userRights
+					if userRights = y is true then
+						output “Have you been deemed incompetent in a court of law?”
+						input userComp
+						if userComp = n is true then
+							output “Your are qualified to vote.”
+						else
+							output “Your are NOT qualified to vote.”
+					else
+						output “Your are NOT qualified to vote.”
+					endif
+				endif
+			else
+				output “Your are NOT qualified to vote.”
+			endif
+		else
+			output “Your are NOT qualified to vote.”
+		endif
+	else
+		output “Your are NOT qualified to vote.”
+	endif
+stop		
